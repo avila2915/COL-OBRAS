@@ -1,4 +1,49 @@
+import { useState } from "react";
+import { sendContactMessage } from "../services/api";
+
+const initialForm = {
+  name: "",
+  email: "",
+  phone: "",
+  message: "",
+};
+
 export default function ContactForm() {
+  const [formData, setFormData] = useState(initialForm);
+  const [status, setStatus] = useState({ type: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  function handleChange(event) {
+    const { name, value } = event.target;
+
+    setFormData((currentData) => ({
+      ...currentData,
+      [name]: value,
+    }));
+  }
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setStatus({ type: "", message: "" });
+
+    try {
+      await sendContactMessage(formData);
+      setFormData(initialForm);
+      setStatus({
+        type: "success",
+        message: "Solicitud enviada correctamente. Te contactaremos pronto.",
+      });
+    } catch (error) {
+      setStatus({
+        type: "error",
+        message: error.message || "No se pudo enviar la solicitud.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
   return (
     <section id="contacto" className="contact">
       <div className="contactInfo">
@@ -25,12 +70,43 @@ export default function ContactForm() {
         </div>
       </div>
 
-      <form className="contactForm">
-        <input type="text" placeholder="Nombre completo" />
-        <input type="email" placeholder="Correo electrónico" />
-        <input type="text" placeholder="Teléfono o WhatsApp" />
-        <textarea placeholder="Describe brevemente tu proyecto" rows="5"></textarea>
-        <button type="submit">Enviar solicitud</button>
+      <form className="contactForm" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="name"
+          placeholder="Nombre completo"
+          value={formData.name}
+          onChange={handleChange}
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Correo electrónico"
+          value={formData.email}
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          name="phone"
+          placeholder="Teléfono o WhatsApp"
+          value={formData.phone}
+          onChange={handleChange}
+        />
+        <textarea
+          name="message"
+          placeholder="Describe brevemente tu proyecto"
+          rows="5"
+          value={formData.message}
+          onChange={handleChange}
+        ></textarea>
+
+        {status.message && (
+          <p className={`formStatus ${status.type}`}>{status.message}</p>
+        )}
+
+        <button type="submit" disabled={isSubmitting}>
+          {isSubmitting ? "Enviando..." : "Enviar solicitud"}
+        </button>
       </form>
     </section>
   );

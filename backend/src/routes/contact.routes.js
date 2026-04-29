@@ -1,2 +1,8 @@
-// Contact routes will go here.
+import { Router } from "express";
+import { createContact } from "../controllers/contact.controller.js";
 
+const router = Router();
+
+router.post("/", createContact);
+
+export default router;

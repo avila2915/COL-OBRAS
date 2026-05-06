@@ -12,7 +12,7 @@ services:
       - key: SMTP_HOST
         value: smtp.gmail.com
       - key: SMTP_PORT
-        value: 587
+        value: "587"
       - key: SMTP_USER
         sync: false
       - key: SMTP_PASS
@@ -22,7 +22,7 @@ services:
       - key: COMPANY_EMAIL
         value: col.obrasingarq@gmail.com
       - key: SMTP_TLS_REJECT_UNAUTHORIZED
-        value: false
+        value: "false"
 
   - type: web
     name: col-obras-frontend

@@ -35,9 +35,10 @@ export default function ContactForm() {
         message: "Solicitud enviada correctamente. Te contactaremos pronto.",
       });
     } catch (error) {
+      console.error("Error enviando solicitud de contacto:", error);
       setStatus({
         type: "error",
-        message: error.message || "No se pudo enviar la solicitud.",
+        message: "No se pudo enviar la solicitud. Intenta nuevamente.",
       });
     } finally {
       setIsSubmitting(false);

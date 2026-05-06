@@ -23,14 +23,3 @@ services:
         value: col.obrasingarq@gmail.com
       - key: SMTP_TLS_REJECT_UNAUTHORIZED
         value: "false"
-
-  - type: web
-    name: col-obras-frontend
-    runtime: static
-    rootDir: frontend
-    buildCommand: npm install && npm run build
-    staticPublishPath: frontend/dist
-    autoDeployTrigger: commit
-    envVars:
-      - key: VITE_API_URL
-        sync: false

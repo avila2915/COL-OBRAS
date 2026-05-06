@@ -56,8 +56,12 @@ export default function ContactForm() {
 
         <div className="contactDetails">
           <div>
-            <span className="detailLabel">Celular</span>
+            <span className="detailLabel">Gerencia técnica</span>
             <a href="tel:+573144650807">314 465 0807</a>
+          </div>
+          <div>
+            <span className="detailLabel">Gerencia administrativa</span>
+            <a href="tel:+573125136399">312 513 6399</a>
           </div>
           <div>
             <span className="detailLabel">Teléfono</span>
@@ -66,6 +70,14 @@ export default function ContactForm() {
           <div>
             <span className="detailLabel">Correo</span>
             <a href="mailto:col.obrasingarq@gmail.com">col.obrasingarq@gmail.com</a>
+          </div>
+          <div>
+            <span className="detailLabel">Ubicación</span>
+            <p>
+              Villavicencio - Meta
+              <br />
+              Mitú - Vaupés
+            </p>
           </div>
         </div>
       </div>

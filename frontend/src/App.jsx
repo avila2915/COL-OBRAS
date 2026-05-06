@@ -11,8 +11,8 @@ export default function App() {
       <main>
         <section id="inicio" className="hero">
           <div className="heroContent">
-            <p className="eyebrow">Ingeniería y Arquitectura S.A.S</p>
-            <h1>Infraestructura técnica para la región Amazorinoquia</h1>
+            <p className="eyebrow">Ingeniería y Arquitectura S.A.S.</p>
+            <h1>Ingeniería que transforma la Amazorinoquía</h1>
             <p>
               Diseñamos y ejecutamos soluciones en saneamiento básico, infraestructura
               urbana, energías renovables, iluminación, vías y proyectos ambientales.
@@ -26,7 +26,7 @@ export default function App() {
 
           <div className="heroPanel" aria-label="Resumen de experiencia">
             <div>
-              <strong>7+</strong>
+              <strong>+25</strong>
               <span>años de experiencia</span>
             </div>
             <div>
@@ -34,7 +34,7 @@ export default function App() {
               <span>áreas técnicas</span>
             </div>
             <div>
-              <strong>Meta y Vaupés</strong>
+              <strong>Amazorinoquía</strong>
               <span>cobertura regional</span>
             </div>
           </div>
@@ -49,7 +49,7 @@ export default function App() {
           <div className="companyGrid">
             <article className="companyText">
               <p>
-                COL OBRAS Ingeniería y Arquitectura S.A.S es una empresa constructora
+                COL OBRAS Ingeniería y Arquitectura S.A.S. es una empresa constructora
                 con experiencia legal y certificada en proyectos de ingeniería,
                 arquitectura e infraestructura.
               </p>
@@ -71,7 +71,7 @@ export default function App() {
               <article>
                 <h3>Visión</h3>
                 <p>
-                  Ser una empresa líder en la región Amazorinoquia, reconocida por su
+                  Ser una empresa líder en la región de la Amazorinoquía, reconocida por su
                   calidad, innovación y compromiso con la sociedad.
                 </p>
               </article>
